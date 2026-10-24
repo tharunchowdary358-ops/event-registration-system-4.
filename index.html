@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover events and manage your event registrations.">
+  <title>Eventify | Event Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Eventify home"><span class="brand-mark">E</span> Eventify</a>
+    <nav>
+      <a href="#events">Explore events</a>
+      <a href="#my-registrations">My registrations <span id="nav-count" class="count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MAKE TIME FOR WHAT MATTERS</p>
+        <h1>Find your next<br><span>great experience.</span></h1>
+        <p class="hero-text">Discover workshops, tech talks, and community events. Save your spot in just a few clicks.</p>
+        <a class="button button-primary" href="#events">Explore events <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Decorative event illustration">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card"><span class="art-icon">✦</span><p>Good people.<br>Great ideas.</p><span class="art-small">YOUR NEXT CHAPTER STARTS HERE</span></div>
+        <span class="float-dot dot-one"></span><span class="float-dot dot-two"></span><span class="float-star">✳</span>
+      </div>
+    </section>
+
+    <section id="events" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">WHAT'S HAPPENING</p><h2>Explore events</h2><p class="muted">A little something for every curious mind.</p></div>
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search events..." aria-label="Search events"></div>
+      </div>
+      <div class="filters" role="group" aria-label="Filter events">
+        <button class="filter active" data-category="All">All events</button>
+        <button class="filter" data-category="Technology">Technology</button>
+        <button class="filter" data-category="Career">Career</button>
+        <button class="filter" data-category="Design">Design</button>
+        <button class="filter" data-category="Community">Community</button>
+      </div>
+      <p id="event-status" class="status-text" aria-live="polite"></p>
+      <div id="event-grid" class="event-grid"></div>
+    </section>
+
+    <section id="my-registrations" class="section registrations-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR PLANS</p><h2>My registrations <span id="registration-count" class="heading-count">0</span></h2><p class="muted">Your next great experience is on the list.</p></div>
+      </div>
+      <div id="registrations-list" class="registrations-list"></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">E</span> Eventify</a><p>Built with HTML, CSS & JavaScript.</p><p>© <span id="year"></span> Eventify</p></footer>
+
+  <dialog id="register-dialog" class="register-dialog">
+    <form id="registration-form">
+      <button type="button" class="close-dialog" id="close-dialog" aria-label="Close registration form">×</button>
+      <p class="eyebrow">SAVE YOUR SPOT</p>
+      <h2>Register for event</h2>
+      <p id="dialog-event-title" class="muted"></p>
+      <label for="attendee-name">Full name</label>
+      <input id="attendee-name" name="name" type="text" placeholder="Your full name" required minlength="2" maxlength="70">
+      <label for="attendee-email">Email address</label>
+      <input id="attendee-email" name="email" type="email" placeholder="you@example.com" required maxlength="120">
+      <p id="form-error" class="form-error" aria-live="polite"></p>
+      <button class="button button-primary full-button" type="submit">Confirm registration</button>
+      <p class="fine-print">Demo project: your details are stored only in this browser.</p>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
